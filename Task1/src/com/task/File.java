@@ -1,47 +1,46 @@
-package Task1;
+package com.task;
 
 
 
 public class File {
-    private String Type;
-    private Directory Directory;
-    private String Name;
-    private  String Content;
+    private String typeFile;
+    private Directory directoryFile;
+    private String nameFile;
+    private  String contentFile;
    public File (String type, Directory directory, String name){
-        this.Type = type;
-        this.Directory = directory;
-        this.Name = name;
-        this.Content = "";
+        this.typeFile = type;
+        this.directoryFile = directory;
+        this.nameFile = name;
+        this.contentFile = "";
     }
-    public void showContent()
+    public void showContentFile()
     {
-        System.out.println(this.Content);
+        System.out.println(this.contentFile);
     }
 
-    public Directory getDirectory() {
-        return Directory;
+    public Directory getDirectoryFile() {
+        return directoryFile;
     }
 
-    public String getName() {
-        return Name;
+    public String getNameFile() {
+        return nameFile;
     }
 
-    public String getContent() {
-        return Content;
+    public String getContentFile() {
+        return contentFile;
     }
 
-    public String getType() {
-        return Type;
+    public String getTypeFile() {
+        return typeFile;
     }
 
-    public void setContent(String content) {
-        this.Content = content;
+    public void setContentFile(String contentFile) {
+        this.contentFile = contentFile;
     }
 
-    public void Rename(String name)
-    {
-        String filePath =  this.Directory.getFilePath() + "\\" + this.Name + "." + this.Type;
-        String newFilePath = this.Directory.getFilePath() + "\\" + name + "." + this.Type;
+    public void renameFile(String name) {
+        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
+        String newFilePath = this.directoryFile.getFilePath() + "\\" + name + "." + this.typeFile;
         try {
             java.io.File f = new java.io.File(filePath);
             java.io.File newF = new java.io.File(newFilePath);
@@ -53,10 +52,11 @@ public class File {
         catch (Exception e) {
             System.err.println(e);
         }
-        this.Name = name;
+        this.nameFile = name;
     }
+
     public void createFile (){
-        String filePath =  this.Directory.getFilePath() + "\\" + this.Name + "." + this.Type;
+        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
         try {
             java.io.File f = new java.io.File(filePath);
             if (f.createNewFile())
@@ -68,8 +68,9 @@ public class File {
             System.err.println(e);
         }
     }
+
     public void deleteFile (){
-        String filePath =  this.Directory.getFilePath() + "\\" + this.Name + "." + this.Type;
+        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
         try {
             java.io.File f = new java.io.File(filePath);
             if (f.delete())

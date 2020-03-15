@@ -1,11 +1,13 @@
-package Task1;
+package com.task;
 
 public class Directory {
     private String filePath;
-    public Directory (){
+
+    public Directory() {
         this.filePath = "C:\\Users\\reznik\\Documents";
     }
-    public Directory (String filePath){
+
+    public Directory(String filePath) {
         this.filePath = filePath;
     }
 

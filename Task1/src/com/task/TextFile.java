@@ -1,4 +1,4 @@
-package Task1;
+package com.task;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,13 +11,13 @@ public class TextFile extends File {
         super("txt", directory, name);
     }
     public void addContent (String text){
-        String fullName = this.getDirectory().getFilePath() + "\\" + this.getName() + "." + this.getType();
+        String fullName = this.getDirectoryFile().getFilePath() + "\\" + this.getNameFile() + "." + this.getTypeFile();
         try {
             Files.write(Paths.get(fullName), text.getBytes(), StandardOpenOption.APPEND);
         }
         catch (IOException e) {
             System.out.println(e);
         }
-        this.setContent(super.getContent() + text);
+        this.setContentFile(super.getContentFile() + text);
     }
 }
