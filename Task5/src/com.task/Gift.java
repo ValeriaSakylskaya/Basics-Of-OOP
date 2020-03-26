@@ -35,7 +35,7 @@ public class Gift {
 
         }
 
-        public Builder setWrapping(WrapType wrapType, double wrappingPrice) {
+        public Builder setWrap(WrapType wrapType, double wrappingPrice) {
             Gift.this.wrap = new Wrap(wrapType, wrappingPrice);
             return this;
         }

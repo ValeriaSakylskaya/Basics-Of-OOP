@@ -11,13 +11,13 @@ public class TextFile extends File {
         super("txt", directory, name);
     }
     public void addContent (String text){
-        String fullName = this.getDirectoryFile().getFilePath() + "\\" + this.getNameFile() + "." + this.getTypeFile();
+        String fullName = this.getDirectory().getFilePath() + "\\" + this.getName() + "." + this.getType();
         try {
             Files.write(Paths.get(fullName), text.getBytes(), StandardOpenOption.APPEND);
         }
         catch (IOException e) {
             System.out.println(e);
         }
-        this.setContentFile(super.getContentFile() + text);
+        this.setContent(super.getContent() + text);
     }
 }

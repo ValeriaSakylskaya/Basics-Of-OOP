@@ -3,15 +3,15 @@ package com.task;
 import com.task.Enum.WrapType;
 
 public class Wrap {
-    private WrapType wrapType;
-    private double priceWrap;
+    private WrapType type;
+    private double price;
 
-    Wrap(WrapType wrapType, double Price){
-        this.wrapType = wrapType;
-        this.priceWrap = Price;
+    Wrap(WrapType type, double price){
+        this.type = type;
+        this.price = price;
     }
     @Override
     public String toString(){
-        return wrapType + " " + priceWrap;
+        return type + " " + price;
     }
 }

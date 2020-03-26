@@ -1,46 +1,46 @@
 package com.task;
 
 
-
 public class File {
-    private String typeFile;
-    private Directory directoryFile;
-    private String nameFile;
-    private  String contentFile;
-   public File (String type, Directory directory, String name){
-        this.typeFile = type;
-        this.directoryFile = directory;
-        this.nameFile = name;
-        this.contentFile = "";
-    }
-    public void showContentFile()
-    {
-        System.out.println(this.contentFile);
+    private String type;
+    private Directory directory;
+    private String name;
+    private String content;
+
+    public File(String type, Directory directory, String name) {
+        this.type = type;
+        this.directory = directory;
+        this.name = name;
+        this.content = "";
     }
 
-    public Directory getDirectoryFile() {
-        return directoryFile;
+    public void showFileContent() {
+        System.out.println(this.content);
     }
 
-    public String getNameFile() {
-        return nameFile;
+    public Directory getDirectory() {
+        return directory;
     }
 
-    public String getContentFile() {
-        return contentFile;
+    public String getName() {
+        return name;
     }
 
-    public String getTypeFile() {
-        return typeFile;
+    public String getContent() {
+        return content;
     }
 
-    public void setContentFile(String contentFile) {
-        this.contentFile = contentFile;
+    public String getType() {
+        return type;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public void renameFile(String name) {
-        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
-        String newFilePath = this.directoryFile.getFilePath() + "\\" + name + "." + this.typeFile;
+        String filePath = this.directory.getFilePath() + "\\" + this.name + "." + this.type;
+        String newFilePath = this.directory.getFilePath() + "\\" + name + "." + this.type;
         try {
             java.io.File f = new java.io.File(filePath);
             java.io.File newF = new java.io.File(newFilePath);
@@ -48,37 +48,34 @@ public class File {
                 System.out.println("File rename");
             else
                 System.out.println("error");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
-        this.nameFile = name;
+        this.name = name;
     }
 
-    public void createFile (){
-        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
+    public void createFile() {
+        String filePath = this.directory.getFilePath() + "\\" + this.name + "." + this.type;
         try {
             java.io.File f = new java.io.File(filePath);
             if (f.createNewFile())
                 System.out.println("File created");
             else
                 System.out.println("File already exists");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
     }
 
-    public void deleteFile (){
-        String filePath =  this.directoryFile.getFilePath() + "\\" + this.nameFile + "." + this.typeFile;
+    public void deleteFile() {
+        String filePath = this.directory.getFilePath() + "\\" + this.name + "." + this.type;
         try {
             java.io.File f = new java.io.File(filePath);
             if (f.delete())
                 System.out.println("File delete");
             else
                 System.out.println("File is not exists");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.err.println(e);
         }
     }

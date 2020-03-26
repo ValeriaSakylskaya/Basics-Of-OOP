@@ -3,17 +3,17 @@ package com.task;
 import java.util.ArrayList;
 
 public class Payment {
-    private ArrayList<Product> products = new ArrayList<Product>();
+    private ArrayList<Product> productList = new ArrayList<Product>();
     Product product;
 
     public void addProduct(String productName, int quantity, double count) {
         product = new Product(productName, quantity, count);
-        products.add(product);
+        productList.add(product);
     }
 
     public void makeOrder() {
         System.out.println("Name:  Quantity:  Count:  ");
-        for (Product p : products) {
+        for (Product p : productList) {
             System.out.println(p.toString());
         }
         System.out.println(" Total sum: " + getTotalSum());
@@ -21,7 +21,7 @@ public class Payment {
 
     private double getTotalSum() {
         double Sum = 0;
-        for (Product p : products) {
+        for (Product p : productList) {
             Sum += (p.count * p.quantity);
         }
         return Sum;
@@ -29,11 +29,11 @@ public class Payment {
 
     protected class Product {
         private double count;
-        private String productName;
+        private String name;
         private int quantity;
 
-        Product(String productName, int quantity, double count) {
-            this.productName = productName;
+        Product(String name, int quantity, double count) {
+            this.name = name;
             this.quantity = quantity;
             this.count = count;
         }
@@ -41,7 +41,7 @@ public class Payment {
         @Override
 
         public String toString() {
-            return this.productName + " : " + this.quantity + " : " + this.count + ";";
+            return this.name + " : " + this.quantity + " : " + this.count + ";";
         }
     }
 }

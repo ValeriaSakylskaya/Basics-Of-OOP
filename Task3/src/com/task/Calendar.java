@@ -25,14 +25,14 @@ public class Calendar {
         Days.add(12, new Day(13, Months.October, 2019, DayOfTheWeek.Sunday, TypeOfDay.Weekend));
     }
 
-    public void showAllPublicHoliday() {
+    public void showAllPublicHolidays() {
         for (Day d : Days) {
             if (d.typeOfDay == TypeOfDay.PublicHoliday)
                 System.out.println(d.toString());
         }
     }
 
-    public void showAllWeekend() {
+    public void showAllWeekends() {
         for (Day d : Days) {
             if (d.typeOfDay == TypeOfDay.Weekend)
                 System.out.println(d.toString());

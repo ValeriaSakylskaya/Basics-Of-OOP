@@ -3,30 +3,30 @@ package com.task;
 import com.task.Enum.SweetType;
 
 public class Sweet {
-    private SweetType sweetType;
-    private double priceSweet;
-    private double countSweet;
+    private SweetType type;
+    private double price;
+    private double count;
 
-    public Sweet(SweetType sweetType, double price, double count) {
-        this.sweetType = sweetType;
-        this.priceSweet = price;
-        this.countSweet = count;
+    public Sweet(SweetType type, double price, double count) {
+        this.type = type;
+        this.price = price;
+        this.count = count;
     }
 
-    public SweetType getSweetType() {
-        return sweetType;
+    public SweetType getType() {
+        return type;
     }
 
-    public double getPriceSweet() {
-        return priceSweet;
+    public double getPrice() {
+        return price;
     }
 
-    public double getCountSweet() {
-        return countSweet;
+    public double getCount() {
+        return count;
     }
     @Override
     public String toString(){
-        return sweetType + " count: " + countSweet + " price: " + priceSweet;
+        return type + " count: " + count + " price: " + price;
     }
 
 
